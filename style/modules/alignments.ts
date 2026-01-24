@@ -1,4 +1,4 @@
-export const commonSpacing = {
+export const commonSpacing : Record<string, React.CSSProperties> = {
     fullCenter: {
         display: 'flex',
         justifyContent: 'center',

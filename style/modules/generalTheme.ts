@@ -19,7 +19,7 @@ export const colorPalette = {
         },
         border: '#666666',
         text: {
-            light: '#f2f2f2',
+            light: '#c6c6c6',
             muted: '#b3b3b3',
         },
     },
@@ -36,5 +36,18 @@ export const colorPalette = {
 }
 
 export const typographySettings = {
-
-}
+    fontFamily: "'Roboto', sans-serif",
+    fontSizes: {
+        small: '0.875rem',
+        medium: '1rem',
+        large: '1.25rem',
+        xLarge: '1.6rem',
+    },
+    fontWeights: {
+        light: 300,
+        regular: 400,
+        medium: 500,
+        strong: 600,
+        bold: 700,
+    }
+}    
