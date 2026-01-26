@@ -3,6 +3,7 @@
 // --- components ---
 import DisplayNavbar from "@/components/pages/display/Navbar"
 import HeroSection from "@/components/pages/display/landing/heroSection"
+import MainContentArea from "@/components/pages/display/landing/mainContentArea"
 
 // --- style & alignments ---
 import { commonSpacing } from "@/style/modules/alignments"
@@ -25,6 +26,8 @@ export default function Home() {
         }}
       >
         <HeroSection />
+
+        <MainContentArea />
       </Stack>
     </Stack>
   )

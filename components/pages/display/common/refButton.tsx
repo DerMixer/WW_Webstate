@@ -13,11 +13,12 @@ import { buttonBrownGradient } from "@/style/common/shades"
 
 export default function HrefButton({text, href}: {text: string, href: string}) {
     return (
-        <Button
+        <Button // --- reference button ---
             href={href}
             disableRipple
             draggable={false}
             sx={{
+                width: 'fit-content',
                 fontFamily: typographySettings.fontFamily,
                 fontSize: typographySettings.fontSizes.large,
                 fontWeight: typographySettings.fontWeights.strong,
@@ -33,9 +34,10 @@ export default function HrefButton({text, href}: {text: string, href: string}) {
                 pr: 4.5,
                 background: buttonBrownGradient,
                 '&:hover': {
-                    transform: 'scale(1.02)',
+                    transform: 'scale(1.015)',
                 },
                 transition: 'all 0.25s ease-in-out',
+                display: text === '' ? 'none' : '',
             }}
         >
             <UnderlineHoverElement underlineColor={colorPalette.dark.text.light}>

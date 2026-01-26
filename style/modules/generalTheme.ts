@@ -38,10 +38,12 @@ export const colorPalette = {
 export const typographySettings = {
     fontFamily: "'Roboto', sans-serif",
     fontSizes: {
-        small: '0.875rem',
+        small: '1.1rem',
         medium: '1.4rem',
         large: '1.5rem',
         xLarge: '1.6rem',
+        xxLarge: '2.3rem',
+        additional: '2.5rem'
     },
     fontWeights: {
         light: 300,
@@ -50,5 +52,11 @@ export const typographySettings = {
         strong: 600,
         bold: 700,
         max: 800
+    },
+    iconSizes: {
+        small: '4rem',
+        medium: '6rem',
+        large: '8rem',
+        xLarge: '13rem'
     }
 }    
