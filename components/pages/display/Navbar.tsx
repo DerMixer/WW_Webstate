@@ -35,6 +35,10 @@ export default function DisplayNavbar() {
             direction="row"
             spacing={30}
             sx={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                zIndex: 1000,
                 ...commonSpacing.SA,
                 width: '100%',
                 pt: 2.8,

@@ -4,11 +4,11 @@ export const commonSpacing : Record<string, React.CSSProperties> = {
         justifyContent: 'center',
         alignItems: 'center',
     },
-    xCenter: {
+    yCenter: {
         display: 'flex',
         justifyContent: 'center',   
     },
-    yCenter: {
+    xCenter: {
         display: 'flex',
         alignItems: 'center',
     },

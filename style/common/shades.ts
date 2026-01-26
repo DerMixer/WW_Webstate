@@ -1,0 +1,1 @@
+export const buttonBrownGradient = "linear-gradient(35deg, rgba(175, 146, 110, 1) 0%, rgb(128, 94, 57) 40%, rgba(175, 146, 110, 1) 120%)"

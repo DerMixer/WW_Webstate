@@ -39,8 +39,8 @@ export const typographySettings = {
     fontFamily: "'Roboto', sans-serif",
     fontSizes: {
         small: '0.875rem',
-        medium: '1rem',
-        large: '1.25rem',
+        medium: '1.4rem',
+        large: '1.5rem',
         xLarge: '1.6rem',
     },
     fontWeights: {
@@ -49,5 +49,6 @@ export const typographySettings = {
         medium: 500,
         strong: 600,
         bold: 700,
+        max: 800
     }
 }    

@@ -1,13 +1,31 @@
-import DisplayNavbar from "@/components/pages/display/Navbar";
-import { Stack } from "@mui/material";
+'use client'
+
+// --- components ---
+import DisplayNavbar from "@/components/pages/display/Navbar"
+import HeroSection from "@/components/pages/display/landing/heroSection"
+
+// --- style & alignments ---
+import { commonSpacing } from "@/style/modules/alignments"
+
+// --- mui components ---
+import { Stack } from "@mui/material"
+
 
 export default function Home() {
   return (
     <Stack
-      direction="column"
-      spacing={5}  
+      direction="column" 
     > 
       <DisplayNavbar />
+
+      <Stack // --- main content container ---
+        sx={{
+          width: '100%',
+          ...commonSpacing.yCenter,
+        }}
+      >
+        <HeroSection />
+      </Stack>
     </Stack>
   )
 }

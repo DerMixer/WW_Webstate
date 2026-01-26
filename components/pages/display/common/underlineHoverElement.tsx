@@ -7,7 +7,7 @@ import { colorPalette } from "@/style/modules/generalTheme"
 import { Box } from "@mui/material"
 
 
-export default function UnderlineHoverElement({ children }: { children?: React.ReactNode }) {
+export default function UnderlineHoverElement({ children, underlineColor }: { children?: React.ReactNode, underlineColor?: string }) {
     return (
         <Box // --- underline hover effect container ---
             sx={{
@@ -31,7 +31,7 @@ export default function UnderlineHoverElement({ children }: { children?: React.R
                     pointerEvents: 'none',
                     '&:hover, .MuiBox-root:hover &': {
                         width: '100%',
-                        backgroundColor: colorPalette.primary.main,
+                        backgroundColor: underlineColor || colorPalette.primary.main,
                     },
                 }}
             />
