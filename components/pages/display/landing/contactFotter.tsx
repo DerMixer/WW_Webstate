@@ -13,6 +13,7 @@ import PartlyHighlitedHeadline from "../common/partlyHighlitedHeadline"
 import { contactInformation } from "@/static/Data/contactInformation"
 import ContactWidget from "../common/contactWidget"
 import { contactInformationType } from "@/types/generalTypes"
+import Footer from "./fotter"
 
 
 export default function ContactFooter() {
@@ -26,7 +27,7 @@ export default function ContactFooter() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                py: 10,
+                pt: 10,
             }}
         >
             <Stack // --- headline container ---
@@ -69,6 +70,7 @@ export default function ContactFooter() {
                     <ContactWidget key={index} {...info} />
                 ))}
             </Stack>
+            <Footer />
         </Stack>
     )
 }

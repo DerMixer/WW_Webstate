@@ -38,6 +38,7 @@ export const colorPalette = {
 export const typographySettings = {
     fontFamily: "'Roboto', sans-serif",
     fontSizes: {
+        xSmall: '0.95rem',
         small: '1rem',
         medium: '1.4rem',
         large: '1.5rem',
