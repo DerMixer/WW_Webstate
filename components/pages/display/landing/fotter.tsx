@@ -1,12 +1,13 @@
 'use client'
 
+// --- alignments ---
 import { commonSpacing } from "@/style/modules/alignments"
+
 // --- theme & styling ---
 import { colorPalette, typographySettings } from "@/style/modules/generalTheme"
 
 // --- mui components ---
 import { Stack, Typography } from "@mui/material"
-import { common } from "@mui/material/colors"
 
 export default function Footer() {
     return(
@@ -24,7 +25,7 @@ export default function Footer() {
             >
                 Copyright © Weekend Warriors.
             </Typography>
-            <Stack
+            <Stack // --- bottom footer container ---
                 direction={'row'}
                 spacing={5}
                 sx={{

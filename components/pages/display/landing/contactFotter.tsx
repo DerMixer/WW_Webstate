@@ -15,10 +15,18 @@ import ContactWidget from "../common/contactWidget"
 import { contactInformationType } from "@/types/generalTypes"
 import Footer from "./fotter"
 
+// --- hooks ---
+import useInViewport from "@/misc/hooks/useInViewport"
+import { slideInFromBottom } from "@/style/common/animations"
+
 
 export default function ContactFooter() {
+    // --- intersection observation ---
+    const { ref, isVisible } = useInViewport<HTMLDivElement> ({ threshold: 0.2, triggerOnce: true })
+    
     return(
         <Stack // --- contact footer container ---
+            ref={ref}
             direction={'column'}
             spacing={8}
             sx={{
@@ -28,6 +36,19 @@ export default function ContactFooter() {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 pt: 10,
+                '& > *': {
+                    animation: isVisible ? `${slideInFromBottom} 0.6s ease-out forwards` : 'none',
+                    opacity: 0,
+                },
+                '& > *:nth-of-type(1)': {
+                    animationDelay: '0.1s',
+                },
+                '& > *:nth-of-type(2)': {
+                    animationDelay: '0.3s',
+                },
+                '& > *:nth-of-type(3)': {
+                    animationDelay: '0.5s',
+                },
             }}
         >
             <Stack // --- headline container ---
@@ -64,6 +85,7 @@ export default function ContactFooter() {
                 sx={{
                     ...commonSpacing.xCenter,
                     px: 8
+
                 }}
             >
                 {contactInformation.map((info: contactInformationType, index: number) => (

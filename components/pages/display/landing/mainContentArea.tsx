@@ -8,14 +8,13 @@ import { commonSpacing } from "@/style/modules/alignments"
 import { darkBackgroundGradient } from "@/style/common/shades"
 
 // --- mui components ---
-import { Stack } from "@mui/material"
+import { Box, Stack } from "@mui/material"
 
 // --- components ---
 import InformationWiget from "../common/informationWidget"
 
 // --- types ---
 import { widgetInformationType } from "@/types/generalTypes"
-
 
 
 export default function MainContentArea() {
@@ -34,13 +33,24 @@ export default function MainContentArea() {
                 px: 15,
             }}
         >
-            {widgetInformation.map((widget: widgetInformationType, index: number) => (
-                <InformationWiget 
-                    key={index} 
-                    information={widget}
-                    index={index}
-                />
-            ))}
+            {widgetInformation.map((widget: widgetInformationType, index: number) => {
+                    const isLeftAligned = index % 2 !== 0;
+                return (
+                    <Box
+                        key={index}
+                        id={index === 0 ? 'info-widget' : undefined}
+                        sx={{ 
+                            scrollMarginTop: index === 0 ? '10rem' : undefined,
+                            display: 'flex',
+                            justifyContent: isLeftAligned ? 'flex-start !important' : 'flex-end !important',
+                        } }
+                    >
+                        <InformationWiget 
+                            information={widget}
+                            index={index}
+                        />
+                    </Box>
+            )})}
         </Stack>
     )
 }

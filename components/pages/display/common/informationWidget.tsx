@@ -17,10 +17,25 @@ import { Icon, Stack, Typography } from "@mui/material"
 import HrefButton from "./refButton"
 import PartlyHighlitedHeadline from "./partlyHighlitedHeadline"
 
+// --- hooks ---
+import useInViewport from "@/misc/hooks/useInViewport"
+
+// --- animations ---
+import { slideInFromLeft, slideInFromRight } from "@/style/common/animations"
+
 
 export default function InformationWidget({ information, index }: { information: widgetInformationType, index: number }) {
+    // --- alignent & animation calculation ---
+    const isLeftAligned = index % 2 !== 0 
+    const animationName = isLeftAligned ? `${slideInFromLeft}` : `${slideInFromRight}`
+    
+    // --- intersection observation ---
+    const { ref, isVisible } = useInViewport<HTMLDivElement> ({ threshold: 0.2, triggerOnce: true })
+
+
     return (
         <Stack // --- widget container ---
+            ref={ref}
             direction="row"
             spacing={10}
             sx={{ 
@@ -28,7 +43,16 @@ export default function InformationWidget({ information, index }: { information:
                 width: index % 2 === 0 ? '70%' : '85%',
                 fontFamily: typographySettings.fontFamily,
                 color: colorPalette.dark.text.light,
-                alignSelf: index % 2 !== 0 ? 'flex-start' : 'flex-end',
+                '& > *': {
+                    animation: isVisible ? `${animationName} 0.6s ease-out forwards` : 'none',
+                    opacity: 0,
+                },
+                '& > *:nth-of-type(1)': {
+                    animationDelay: '0.1s',
+                },
+                '& > *:nth-of-type(2)': {
+                    animationDelay: '0.3s',
+                },
             }}
         >
             <Icon // --- icon --- 
@@ -48,7 +72,20 @@ export default function InformationWidget({ information, index }: { information:
                 direction="column"
                 spacing={3}
                 sx={{
-                    ...commonSpacing.xCenter
+                    ...commonSpacing.xCenter,
+                    '& > *': {
+                        animation: isVisible ? `${animationName} 0.6s ease-out forwards` : 'none',
+                        opacity: 0,
+                    },
+                    '& > *:nth-of-type(1)': {
+                        animationDelay: '0.2s',
+                    },
+                    '& > *:nth-of-type(2)': {
+                        animationDelay: '0.4s',
+                    },
+                    '& > *:nth-of-type(3)': {
+                        animationDelay: '0.6s',
+                    },
                 }}
             >
                 <Typography // --- headline ---

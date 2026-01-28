@@ -11,13 +11,18 @@ export default function UnderlineHoverElement({ children, underlineColor }: { ch
     return (
         <Box // --- underline hover effect container ---
             sx={{
-            display: 'inline-block',
-            position: 'relative',
-            cursor: 'pointer',
+                display: 'inline-block',
+                position: 'relative',
+                cursor: 'pointer',
+                '&:hover .underline-element': {
+                    width: '100%',
+                    backgroundColor: underlineColor || colorPalette.primary.main,
+                },
             }}
         >
             {children}
             <Box // --- underline element ---
+                className="underline-element"
                 sx={{
                     position: 'absolute',
                     bottom: 0,
@@ -29,10 +34,6 @@ export default function UnderlineHoverElement({ children, underlineColor }: { ch
                     transform: 'translateX(-50%)',
                     transition: 'width 0.4s cubic-bezier(0.4,0,0.2,1), background-color 0.4s cubic-bezier(0.4,0,0.2,1)',
                     pointerEvents: 'none',
-                    '&:hover, .MuiBox-root:hover &': {
-                        width: '100%',
-                        backgroundColor: underlineColor || colorPalette.primary.main,
-                    },
                 }}
             />
         </Box>
