@@ -4,17 +4,6 @@ import { widgetInformationType } from "@/types/generalTypes"
 // --- data ---
 import { activePartners } from "./partners"
 
-
-export const highlightedWords: string[] = [
-    'Wir',
-    'Figuren',
-    'bemalen',
-    'Spielen',
-    'Turnier',
-    'Partner',
-    'Intresse'
-]
-
 export const widgetInformation: widgetInformationType[] = [
     {
         icon: 'groups_3',

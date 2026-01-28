@@ -12,3 +12,11 @@ export type widgetInformationType = {
     refText: string,
     url: string
 }
+
+export type contactInformationType = {
+    icon: string
+    headline: string
+    details: string,
+    url: string,
+    urlText: string
+}

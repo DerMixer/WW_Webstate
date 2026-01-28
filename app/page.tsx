@@ -2,6 +2,7 @@
 
 // --- components ---
 import DisplayNavbar from "@/components/pages/display/Navbar"
+import ContactFooter from "@/components/pages/display/landing/contactFotter"
 import HeroSection from "@/components/pages/display/landing/heroSection"
 import MainContentArea from "@/components/pages/display/landing/mainContentArea"
 
@@ -28,6 +29,8 @@ export default function Home() {
         <HeroSection />
 
         <MainContentArea />
+
+        <ContactFooter />
       </Stack>
     </Stack>
   )

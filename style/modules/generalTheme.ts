@@ -13,8 +13,8 @@ export const colorPalette = {
     },
     dark: {
         background: {
-            dark: '#0d0d0d',
-            medium: '#1a1a1a',
+            dark: '#131313',
+            medium: '#161616',
             light: '#262626'
         },
         border: '#666666',
@@ -38,7 +38,7 @@ export const colorPalette = {
 export const typographySettings = {
     fontFamily: "'Roboto', sans-serif",
     fontSizes: {
-        small: '1.1rem',
+        small: '1rem',
         medium: '1.4rem',
         large: '1.5rem',
         xLarge: '1.6rem',

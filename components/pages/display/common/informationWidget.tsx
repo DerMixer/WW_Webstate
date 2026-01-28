@@ -12,29 +12,13 @@ import { widgetInformationType } from "@/types/generalTypes"
 
 // --- mui components ---
 import { Icon, Stack, Typography } from "@mui/material"
+
+// --- components ---
 import HrefButton from "./refButton"
-import { highlightedWords } from "@/static/Data/widgetInformation"
+import PartlyHighlitedHeadline from "./partlyHighlitedHeadline"
 
 
 export default function InformationWidget({ information, index }: { information: widgetInformationType, index: number }) {
-    const headlineWords = information.headline.split(' ')
-
-    const coloredHeadline = headlineWords.map((word: string, idx: number) => {
-        const isHighlighted = highlightedWords.includes(word)
-        return (
-            <span
-                key={idx}
-                style={{
-                    color: isHighlighted ? "#fff" : colorPalette.primary.main,
-                    fontSize: isHighlighted ? typographySettings.fontSizes.additional : typographySettings.fontSizes.xxLarge,
-                    fontWeight: isHighlighted ? typographySettings.fontWeights.max : typographySettings.fontWeights.bold,
-                }}
-            >
-                {word}{idx < headlineWords.length - 1 ? ' ' : ''}
-            </span>
-        )
-    })
-    
     return (
         <Stack // --- widget container ---
             direction="row"
@@ -75,7 +59,7 @@ export default function InformationWidget({ information, index }: { information:
                         textAlign: 'center'
                     }}
                 >
-                    {coloredHeadline}
+                    <PartlyHighlitedHeadline headline={information.headline} />
                 </Typography>
                 <Typography // --- text ---
                     sx={{

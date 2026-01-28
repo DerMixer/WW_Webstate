@@ -9,6 +9,7 @@ import { Box, Stack, Typography } from "@mui/material"
 
 // --- components ---
 import HrefButton from "../common/refButton"
+import { darkBackgroundGradient } from "@/style/common/shades"
 
 
 function HighlitedText({ children }: { children: React.ReactNode }) {
@@ -40,24 +41,9 @@ export default function HeroSection() {
             height: '100vh',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundImage: 'url("/images/background/lighthouse.webp")', 
+            backgroundImage: `${darkBackgroundGradient}, url("/images/background/lighthouse.webp")`, 
             backgroundRepeat: 'no-repeat',
             position: 'relative',
-            '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                bgcolor: 'rgba(0,0,0,0.55)',
-                zIndex: 1,
-                pointerEvents: 'none',
-            },
-            '& > *': {
-                position: 'relative',
-                zIndex: 2,
-            }
           }}
         >
           <Box // --- club logo ---

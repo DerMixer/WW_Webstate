@@ -12,6 +12,8 @@ import { buttonBrownGradient } from "@/style/common/shades"
 
 
 export default function HrefButton({text, href}: {text: string, href: string}) {
+    if(!href || href === '') return null
+
     return (
         <Button // --- reference button ---
             href={href}

@@ -1,8 +1,11 @@
 'use client'
 
+// --- static data ---
 import { widgetInformation } from "@/static/Data/widgetInformation"
+
 // --- theme & styling ---
 import { commonSpacing } from "@/style/modules/alignments"
+import { darkBackgroundGradient } from "@/style/common/shades"
 
 // --- mui components ---
 import { Stack } from "@mui/material"
@@ -14,6 +17,7 @@ import InformationWiget from "../common/informationWidget"
 import { widgetInformationType } from "@/types/generalTypes"
 
 
+
 export default function MainContentArea() {
     return (
         <Stack
@@ -22,7 +26,7 @@ export default function MainContentArea() {
             sx={{
                 width: '100%',
                 ...commonSpacing.yCenter,
-                backgroundImage: 'linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 0.3) 75%, #000 100%), url(/images/background/cityView.webp)',
+                backgroundImage: `${darkBackgroundGradient}, url(/images/background/cityView.webp)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
