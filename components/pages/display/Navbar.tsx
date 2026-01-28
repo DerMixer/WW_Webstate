@@ -60,8 +60,9 @@ export default function DisplayNavbar() {
                     alt="Logo" 
                     sx={{ width: '3.5rem', height: '4rem', userSelect: 'none' }}
                 />
-                <Typography // --- club name --- 
-                    sx={{
+                <a // --- club name & home navigation --- 
+                    href="/"
+                    style={{
                         fontFamily: typographySettings.fontFamily,
                         fontSize: typographySettings.fontSizes.xLarge,
                         fontWeight: typographySettings.fontWeights.bold,
@@ -70,7 +71,7 @@ export default function DisplayNavbar() {
                     }}
                 >
                     Weekend Warriors
-                </Typography>
+                </a>
             </Stack>
             
             <Stack // --- Navigation links container ---
